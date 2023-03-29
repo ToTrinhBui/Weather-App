@@ -8,7 +8,7 @@ export default function Current() {
                 <h1 className="degrees">20</h1>
                 <p className="small">Mostly Clear</p>
             </div>
-            <img src="../images/night/partly_cloudy.png" alt="current-weather-icon" />
+            <img src="../images/day/Day Wind.png" alt="current-weather-icon" />
         </div>
     )
 }

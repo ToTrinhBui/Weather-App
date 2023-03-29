@@ -16,8 +16,6 @@ export default function Toggle() {
         <div className="toggle">
             <label className="switch">
                 <input type="checkbox"
-                    uncheckedIcon={false}
-                    checkedIcon={false}
                     onChange={toggleTheme}
                     checked={theme === 'dark'}
                 />
