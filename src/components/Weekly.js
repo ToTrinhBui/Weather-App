@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function NextDay(){
+export default function Weekly(){
     return(
         <div className="next-day center">
             <p className="small">MON</p>

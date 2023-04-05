@@ -17,7 +17,7 @@ body {
 }
 
 .light {
-  --background: rgba(164, 243, 252, 0.445);
+  --background: rgba(201, 248, 253, 0.445);
   --color: #1f1e22;
   --container: linear-gradient(180deg, #eee8fce7 0%, #95dbe7e8 100%);
   /* --container: linear-gradient(180deg, #A4BDFF 0%, #5A88FF 100%); */
@@ -193,7 +193,7 @@ input:checked+.slider {
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #959ba0;
 }
 
 input:checked+.slider:before {

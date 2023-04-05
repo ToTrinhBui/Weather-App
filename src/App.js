@@ -1,9 +1,9 @@
+import React from 'react';
 import Current from "./components/Current";
 import Detail from "./components/Detail";
-import NextDay from "./components/NextDay";
 import Search from "./components/Search";
-import React from 'react';
 import Toggle from "./components/Toggle";
+import Weekly from "./components/Weekly";
 
 function App() {
   return (
@@ -16,12 +16,12 @@ function App() {
           <Search />
           <Current />
           <div className="days">
-            <NextDay />
-            <NextDay />
-            <NextDay />
-            <NextDay />
-            <NextDay />
-            <NextDay />
+            <Weekly />
+            <Weekly />
+            <Weekly />
+            <Weekly />
+            <Weekly />
+            <Weekly />
           </div>
         </div>
         <div className="right">
