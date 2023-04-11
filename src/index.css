@@ -9,7 +9,7 @@ body {
   --background: #A499C0;
   --color: #FFFFFF;
   --container: radial-gradient(95.47% 71.89% at 93.07% 74.31%, #45278B 20%, #2E335A 100%);
-  --container-box-shadow: 0px 20px 100px rgba(74, 57, 127, 0.7);
+  --container-box-shadow: 0px 20px 50px 5px rgba(57, 42, 104, 0.7);
   --next-day: #48319D;
   --next-day-border: rgba(255, 255, 255, 0.5);
   --days: linear-gradient(167.57deg, #45278B 35%, #C159EC 95%);
@@ -17,11 +17,11 @@ body {
 }
 
 .light {
-  --background: rgba(201, 248, 253, 0.445);
+  --background: rgba(173, 232, 240, 0.445);
   --color: #1f1e22;
-  --container: linear-gradient(180deg, #eee8fce7 0%, #95dbe7e8 100%);
+  --container: linear-gradient(180deg, #dccefce7 0%, #95dbe7e8 100%);
   /* --container: linear-gradient(180deg, #A4BDFF 0%, #5A88FF 100%); */
-  --container-box-shadow: 0px 20px 50px -10px rgba(67, 152, 185, 0.7);
+  --container-box-shadow: 0px 20px 50px 5px rgba(67, 152, 185, 0.7);
   --next-day: #dcedffd5;
   --next-day-border: rgba(82, 82, 82, 0.5);
   --days: linear-gradient(174.69deg, #579FF1 40%, #4be0bb 90%);
@@ -57,9 +57,9 @@ body {
   width: 50%;
 }
 
-.search {
+.search-form {
   width: 94.5%;
-  padding: 15px;
+  padding: 0 0 0 15px;
   background: linear-gradient(168.44deg, rgba(46, 51, 90, 0.26) 1.62%, rgba(28, 27, 51, 0.26) 95.72%);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -72,8 +72,13 @@ body {
   margin-left: 5px;
   border: none;
   background: none;
-  color: rgba(235, 235, 245, 0.6);
-  font-size: 0.8rem;
+  color: var(--color);
+  font-size: 1rem;
+  padding: 12px 0;
+}
+
+.search-input:focus {
+  outline: none;
 }
 
 .current {
