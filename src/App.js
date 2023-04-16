@@ -9,23 +9,29 @@ import { URL_CURRENT_WEATHER, URL_WEEKLY_FORECAST } from './api.js'
 
 function App() {
   const [searchInput, setSearchInput] = useState('')
-  const [today, setToday] = useState([])
-  const [weekly, setWeekly] = useState([])
+  const [today, setToday] = useState(null)
+  const [weekly, setWeekly] = useState(null)
+  const [error, setError] = useState(false)
+
+  async function fetchWeatherData(search) {
+    try {
+      setError(false)
+
+      const currentWeatherResponse = await axios.get(URL_CURRENT_WEATHER(search))
+      setToday(currentWeatherResponse.data)
+
+      const weeklyForecastResponse = await axios.get(URL_WEEKLY_FORECAST(search))
+      setWeekly(weeklyForecastResponse.data)
+
+    } catch (error) {
+      console.error(error)
+      setError(true)
+    }
+  }
 
   useEffect(() => {
     if (!searchInput) {
-      axios.get(URL_CURRENT_WEATHER('Hanoi'))
-        .then(response => {
-          // console.log(response.data)
-          setToday(response.data)
-        })
-        .catch(error => console.error(error));
-      axios.get(URL_WEEKLY_FORECAST('Hanoi'))
-        .then(response => {
-          // console.log(response.data)
-          setWeekly(response.data)
-        })
-        .catch(error => console.error(error));
+      fetchWeatherData('Hanoi')
     }
 
   }, [searchInput]);
@@ -36,18 +42,7 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    axios.get(URL_CURRENT_WEATHER(searchInput))
-      .then(response => {
-        // console.log(response.data)
-        setToday(response.data)
-      })
-      .catch(error => console.error(error));
-    axios.get(URL_WEEKLY_FORECAST(searchInput))
-      .then(response => {
-        // console.log(response.data)
-        setWeekly(response.data)
-      })
-      .catch(error => console.error(error));
+    fetchWeatherData(searchInput)
   }
   return (
     <div className="App">
@@ -61,18 +56,15 @@ function App() {
             submit={handleSubmit}
             change={handleChange}
           />
-          <Current data={today} />
-          <div className="days">
-            <Weekly data={weekly} />
-            <Weekly />
-            <Weekly />
-            <Weekly />
-            <Weekly />
-            <Weekly />
-          </div>
+          {today && <Current data={today} error={error} />}
+          {!error &&
+            <div className="days">
+              {weekly && <Weekly data={weekly} error={error} />}
+            </div>
+          }
         </div>
         <div className="right">
-          <Detail />
+          {today && <Detail data={today} error={error} />}
         </div>
       </div>
     </div>

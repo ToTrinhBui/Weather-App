@@ -1,11 +1,32 @@
 import React from "react";
+import { formatIconTime, formatIconMain } from "../utils";
 
-export default function Weekly(){
-    return(
-        <div className="next-day center">
-            <p className="small">MON</p>
-            <img src="../images/day/Day Rain.png" alt="weather-icon" />
-            <h4>19</h4>
-        </div>
-    )
+export default function Weekly(props) {
+    const dailyWeather = props.data.list.reduce((acc, item) => {
+        const date = new Date(item.dt_txt).toLocaleDateString();
+        if (!acc[date]) {
+            acc[date] = item;
+        }
+        return acc;
+    }, {});
+
+    return (
+        <>
+            {Object.values(dailyWeather).slice(1, 6).map((item, i) => {
+                const date = new Date(item.dt_txt);
+                const dateString = date.toLocaleDateString('en-US', { weekday: 'short' });
+                console.log(item)
+                return (
+                    <div key={i} className="next-day center">
+                        <p className="small">{dateString.toUpperCase()}</p>
+                        <img
+                            src={`../images/${formatIconTime(item.weather?.[0].icon)}/${formatIconTime(item.weather?.[0].icon)} ${formatIconMain(item.weather?.[0].icon)}.png`}
+                            alt="weather-icon"
+                        />
+                        <h4>{Math.round(item.main?.temp - 273.15)}</h4>
+                    </div>
+                );
+            })}
+        </>
+    );
 }

@@ -86,12 +86,20 @@ body {
 }
 
 .current .text {
-  line-height: 40%;
+  line-height: 30%;
   padding: 0px 0px 20px;
 }
-
+.error-image{
+  margin: 80px;
+}
 .degrees {
+  display: flex;
+  justify-content: center;
   font-size: 4.6rem;
+}
+
+.celsius {
+  font-size: 1.5rem;
 }
 
 .current img {
@@ -119,12 +127,15 @@ body {
 }
 
 .detail {
-  padding: 0px 30px 0 50px;
+  padding: 0px 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
-
+.detail span{
+  font-size: 1.2rem;
+  line-height: 0%;
+}
 .card {
   padding: 10px;
   background: var(--card);
