@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     if (!searchInput) {
       fetchWeatherData('Hanoi')
-    }else(fetchWeatherData(searchInput))
+    }
 
   }, [searchInput]);
 
