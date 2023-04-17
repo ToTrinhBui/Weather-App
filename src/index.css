@@ -38,23 +38,46 @@ body {
 }
 
 .container {
+  width: 450px;
   display: flex;
-  margin: 20px 200px;
+  flex-wrap: wrap;
+  margin: 20px auto;
   padding: 20px;
-  /* background: radial-gradient(95.47% 71.89% at 93.07% 74.31%, #45278B 20%, #2E335A 100%); */
   background: var(--container);
-  /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
   box-shadow: var(--container-box-shadow);
   border-radius: 25px;
 }
 
 .left {
-  width: 50%;
+  flex: 0 0 100%;
+  /* Set flex-basis to 100% to take up full width on small screens */
 }
 
 .right {
-  margin-right: auto;
-  width: 50%;
+  flex: 0 0 100%;
+  /* Set flex-basis to 100% to take up full width on small screens */
+  margin-top: 40px;
+  /* Add some spacing between the two divs */
+}
+
+@media (min-width:900px) {
+
+  /* Apply styles for screens larger than 900px */
+  .container {
+    width: 900px;
+  }
+
+  .left {
+    width: 50%;
+    flex: initial;
+  }
+
+  .right {
+    width: 50%;
+    margin-top: 0;
+    margin-right: auto;
+    flex: initial;
+  }
 }
 
 .search-form {
@@ -89,9 +112,11 @@ body {
   line-height: 30%;
   padding: 0px 0px 20px;
 }
-.error-image{
+
+.error-image {
   margin: 80px;
 }
+
 .degrees {
   display: flex;
   justify-content: center;
@@ -107,7 +132,7 @@ body {
 }
 
 .next-day {
-  width: 9%;
+  width: 45px;
   background: var(--next-day);
   border: 1px solid var(--next-day-border);
   box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.25), inset 1px 1px 0px rgba(255, 255, 255, 0.25);
@@ -132,10 +157,12 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 }
-.detail span{
+
+.detail span {
   font-size: 1.2rem;
   line-height: 0%;
 }
+
 .card {
   padding: 10px;
   background: var(--card);
@@ -156,9 +183,9 @@ body {
 }
 
 .switch-button {
-  display: flex;
-  margin: 20px 60px;
-  float: right;
+  position: absolute;
+  top: 40px;
+  right: 60px;
 }
 
 .switch {

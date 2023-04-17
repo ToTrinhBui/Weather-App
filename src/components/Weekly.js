@@ -1,5 +1,5 @@
 import React from "react";
-import { formatIconTime, formatIconMain } from "../utils";
+import {formatIconMain } from "../utils";
 
 export default function Weekly(props) {
     const dailyWeather = props.data.list.reduce((acc, item) => {
@@ -20,7 +20,7 @@ export default function Weekly(props) {
                     <div key={i} className="next-day center">
                         <p className="small">{dateString.toUpperCase()}</p>
                         <img
-                            src={`../images/${formatIconTime(item.weather?.[0].icon)}/${formatIconTime(item.weather?.[0].icon)} ${formatIconMain(item.weather?.[0].icon)}.png`}
+                            src={`../images/day/day ${formatIconMain(item.weather?.[0].icon)}.png`}
                             alt="weather-icon"
                         />
                         <h4>{Math.round(item.main?.temp - 273.15)}</h4>

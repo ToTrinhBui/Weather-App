@@ -6,12 +6,15 @@ export default function Toggle() {
     const toggleTheme = () => {
         setTheme(curr => curr === 'light' ? 'dark' : 'light')
     }
+
     React.useEffect(() => {
+        localStorage.setItem('theme', theme);
         document.body.classList.add(theme);
         return () => {
             document.body.classList.remove(theme);
         };
     }, [theme]);
+
     return (
         <div className="toggle">
             <label className="switch">

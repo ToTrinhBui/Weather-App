@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     if (!searchInput) {
       fetchWeatherData('Hanoi')
-    }
+    }else(fetchWeatherData(searchInput))
 
   }, [searchInput]);
 
@@ -44,6 +44,7 @@ function App() {
     event.preventDefault()
     fetchWeatherData(searchInput)
   }
+
   return (
     <div className="App">
       <div className="switch-button">

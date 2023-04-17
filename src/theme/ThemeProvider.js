@@ -6,7 +6,7 @@ export const ThemeContext = React.createContext({
 });
 
 export default function ThemeProvider(props){
-    const [theme, setTheme] = React.useState('dark')
+    const [theme, setTheme] = React.useState( localStorage.getItem('theme') || 'dark')
     return(
         <ThemeContext.Provider value={{theme, setTheme}}>
            {props.children}
