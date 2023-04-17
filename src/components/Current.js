@@ -17,7 +17,7 @@ export default function Current(props) {
 
     return (
         <div className="current center">
-            {props.error ? <img src="../images/NotFound.png" alt="NotFound" className="error-image" /> :
+            {props.error ? <img src={process.env.PUBLIC_URL+"/images/NotFound.png"} alt="NotFound" className="error-image" /> :
                 <div>
                     <div className="text">
                         <h2>{props.data.name}</h2>
@@ -27,7 +27,7 @@ export default function Current(props) {
                         </h1>
                         <p className="small">{description}</p>
                     </div>
-                    <img src={`/images/${iconTime}/${iconTime} ${iconMain}.png`}
+                    <img src={process.env.PUBLIC_URL+`/images/${iconTime}/${iconTime} ${iconMain}.png`}
                         alt="current-weather-icon" />
                 </div>
             }

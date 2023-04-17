@@ -22,7 +22,7 @@ export default function Detail(props) {
         <div className="detail">
             <div className="card">
                 <div className="title">
-                    <img src="../images/detail/Sunrise.png" alt="title-icon" />
+                    <img src={process.env.PUBLIC_URL+ "/images/detail/Sunrise.png"} alt="title-icon" />
                     <h6>SUNRISE</h6>
                 </div>
                 {props.error ? <span>Not Found</span> : <h1>{sunrise}</h1>}
@@ -30,7 +30,7 @@ export default function Detail(props) {
             </div>
             <div className="card">
                 <div className="title">
-                    <img src="../images/detail/Sunset.png" alt="title-icon" />
+                    <img src={process.env.PUBLIC_URL+ "/images/detail/Sunset.png"} alt="title-icon" />
                     <h6>SUNSET</h6>
                 </div>
                 {props.error ? <span>Not Found</span> : <h1>{sunset}</h1>}
@@ -38,7 +38,7 @@ export default function Detail(props) {
             </div>
             <div className="card">
                 <div className="title">
-                    <img src="../images/detail/Wind.png" alt="title-icon" />
+                    <img src={process.env.PUBLIC_URL+ "/images/detail/Wind.png"} alt="title-icon" />
                     <h6>WIND</h6>
                 </div>
                 {props.error ? <span>Not Found</span> : <h1>{wind}<span> m/s</span></h1>}
@@ -46,7 +46,7 @@ export default function Detail(props) {
             </div>
             <div className="card">
                 <div className="title">
-                    <img src="../images/detail/Thermometer.png" alt="title-icon" />
+                    <img src={process.env.PUBLIC_URL+ "/images/detail/Thermometer.png"} alt="title-icon" />
                     <h6>FEELS LIKE</h6>
                 </div>
                 {props.error ? <span>Not Found</span> : <h1>{feel}<span> °C</span></h1>}
@@ -54,7 +54,7 @@ export default function Detail(props) {
             </div>
             <div className="card">
                 <div className="title">
-                    <img src="../images/detail/visibility.png" alt="title-icon" />
+                    <img src={process.env.PUBLIC_URL+ "/images/detail/Visibility.png"} alt="title-icon" />
                     <h6>VISIBILITY</h6>
                 </div>
                 {props.error ? <span>Not Found</span> : <h1>{visibility}<span> km</span></h1>}
@@ -62,7 +62,7 @@ export default function Detail(props) {
             </div>
             <div className="card">
                 <div className="title">
-                    <img src="../images/detail/Drop.png" alt="title-icon" />
+                    <img src={process.env.PUBLIC_URL+ "/images/detail/Drop.png"} alt="title-icon" />
                     <h6>HUMIDITY</h6>
                 </div>
                 {props.error ? <span>Not Found</span> : <h1>{humidity}<span> %</span></h1>}
