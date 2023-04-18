@@ -27,7 +27,7 @@ export default function Current(props) {
                         </h1>
                         <p className="small">{description}</p>
                     </div>
-                    <img src={process.env.PUBLIC_URL+`/images/${iconTime}/${iconTime} ${iconMain}.png`}
+                    <img src={process.env.PUBLIC_URL+`/images/${iconTime}/${iconTime}${iconMain}.png`}
                         alt="current-weather-icon" />
                 </div>
             }
