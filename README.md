@@ -1,5 +1,5 @@
 # Weather Application
-    This is a weather application built with React. 
+This is a weather application built with React. 
 
 ## Installation
 1. Clone the repository to your local machine.
